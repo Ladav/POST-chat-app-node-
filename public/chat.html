@@ -6,12 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="css/img/chat.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="./css/chat.css">
+    <link rel="stylesheet" href="./css/mediaChat.css">
     <title>post messenger</title>
 </head>
 <body>
     <div class="chat__container">
+        <div class="mobile__icon">
+            <img src="css/img/chat.png">
+            <p>Active<span></span></p>
+            
+        </div>
         <div class="chat__sidebar">
+            <!-- <div class="sidebar__container">
+                <div class="room">
+                    <div class="room__name">${room}</div>
+                </div>
+                <div class="active-users">
+                    <ul>
+                        <li class="user">
+                            <div class="user__avatar">
+                                <i>icon</i>
+                            </div>
+                            <div class="user_name">username</div>
+                            <div class="user__online">
+                                <div class="user__online--icon"></div>
+                                <div class="user__online--time">5:30 AM</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
         </div>
         
         <div class="chat__main">
@@ -21,13 +47,14 @@
             
             <form class="msg__form">
                 <input type="text" name="message" class="input" placeholder="message..." autocomplete="off">
-                <button class="send__btn btn">send</button>
-                <button class="location__btn btn">send Location</button>
+                <button class="send__btn btn"><i class="ion-android-send"></i></button>
+                <button class="location__btn btn"><i class="ion-ios-location"></i></button>
             </form>
         </div>
         
     </div>    
 </body>
+<script src="./js/templates.js"></script>
 <script src="https://momentjs.com/downloads/moment.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/chat.js"></script>

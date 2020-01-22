@@ -3,6 +3,7 @@ const users = [];
 const addUser = ({ id, username, room }) => {
     username = username.trim().toLowerCase();
     room = room.trim().toLowerCase();
+    let createdAt = new Date().getTime();
 
     // username and room both should not be null
     if (!username || !room) {
@@ -19,7 +20,7 @@ const addUser = ({ id, username, room }) => {
     }
 
     // save user
-    const user = { id, username, room };
+    const user = { id, username, room, createdAt};
     users.push(user);
     return { user };
 };

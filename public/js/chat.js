@@ -1,5 +1,6 @@
 const socket = io();
 
+/**all createTemplate function are stored in template.js*/
 /**DOM elements */
 const $msgForm = document.querySelector('.msg__form');
 const $msgFormInput = document.querySelector('.input');
@@ -7,15 +8,25 @@ const $sendBtn = document.querySelector('.send__btn');
 const $locBtn = document.querySelector('.location__btn');
 const $msgContainer = document.querySelector('.msg__container');
 const $sidebar = document.querySelector('.chat__sidebar');
+const $mobileActiveIcon = document.querySelector('.mobile__icon');
 
-// scraping data from url ex->http://localhost:3000/chat.html?username=la&room=ladav
+// scraping data from url ex->http://localhost:3000/chat.html?username=la+surname&room=ladav
 const { username, room } = (() => {
-    let queryString = location.search;                    // queryString = ?username=la&room=ladav
-    queryString = queryString.replace('?username=', '');  // queryString = la&room=ladav
-    queryString = queryString.replace('room=', '');       // queryString = la&ladav
-    queryString = queryString.split('&');                 // ["la", "ladav"]
+    let queryString = location.search;                    // queryString = ?username=la+surname&room=ladav
+    queryString = queryString.replace('?username=', '');  // queryString = la+surname&room=ladav
+    queryString = queryString.replace('room=', '');       // queryString = la+surname&ladav
+    let [username, room] = queryString.split('&');        // ["la+surname", "ladav"]
+    username = username.replace(/\+.*/, '');              // username = 'la' (in case user enter a display name like this-> "la dav nav cadsdf")
 
-    return { username: queryString[0], room: queryString[1] };
+    if(username.charAt(10) !== '') {
+        username = username.substr(0, 10) + '...';
+    }
+
+    if(room.charAt(10) !== '') {
+        room = room.substr(0, 10) + '...';
+    }
+
+    return { username, room };
 })();
 
 // auto scrolling message container
@@ -37,44 +48,20 @@ const autoScroll = () => {
     const scrollHeight = visibleContainerHeight + Math.ceil($msgContainer.scrollTop) + 2;
     if (scrollContainerHeight - lastMsgHeight <= scrollHeight) {
         $msgContainer.scrollTop = $msgContainer.scrollHeight;
-        console.log('done');
     }
 };
 
 socket.on('message', (msg) => {
-    const $msgTemplate = `
-    <div class="msg__box">
-        <div class="msg">
-            <p>
-                <span class="msg__name">${msg.username}</span>
-                <span class="msg__time">${moment(msg.createdAt).format('h:mm A')}</span>
-            </p>
-            <p>${msg.text}</p>
-        </div>
-    </div>`;      
-    $msgContainer.insertAdjacentHTML('beforeend', $msgTemplate);
-    console.log(msg);
+    const $msgTemplate = createMsgTemplate(msg);  
 
+    $msgContainer.insertAdjacentHTML('beforeend', $msgTemplate);
     autoScroll();
 });
 
 socket.on('locationMessage', (msg) => {
-    const $locTemplate = `
-    <div class="msg__box">
-        <div class="msg">
-            <p>
-                <span class="msg__name">${msg.username}</span>
-                <span class="msg__time">${moment(msg.createdAt).format('h:mm A')}</span>
-            </p>
-            <p>
-                <a href=${msg.url} target="_blank">my current location</a>
-            </p>
-        </div>
-    </div>`;
+    const $locTemplate = createLocTemplate(msg);
 
     $msgContainer.insertAdjacentHTML('beforeend', $locTemplate);
-    console.log(msg);
-
     autoScroll();
 });
 
@@ -82,23 +69,16 @@ socket.on('roomData', ({ room, users }) => {
     // cleaning the previous output
     $sidebar.textContent = ''
 
-    let usersHTML = '';
-    users.forEach((user) => {
-        usersHTML = usersHTML + `<li>${user.username}</li>`;
-    });
-
-    const $sideBarTemplate = `
-    <div class="sidebar__container">
-        <h1>${room}</h1>
-        <div class="active-users">
-            <h2>Active</h2>
-            <ul class="temp">
-                ${usersHTML}
-            </ul>
-        </div>
-    </div>`;
+    const $sideBarTemplate =  createSidebarTemplate(room, users );
 
     $sidebar.insertAdjacentHTML('afterbegin', $sideBarTemplate);
+});
+
+socket.emit('join', { username, room }, (error) => {
+    if (error) {
+        alert(error);
+        location.href = '/';
+    }
 });
 
 $sendBtn.addEventListener('click', (event) => {
@@ -106,14 +86,16 @@ $sendBtn.addEventListener('click', (event) => {
 
     $sendBtn.setAttribute('disabled', 'disabled');
     const msgText = $msgForm.elements.message.value;
-    
-    socket.emit('sendMessage', msgText, () => {
-        $sendBtn.removeAttribute('disabled');
-        $msgFormInput.value = '';
-        $msgFormInput.focus();
 
-        console.log('msg Delivered!');
-    });
+    if(msgText !== '') {
+        socket.emit('sendMessage', msgText, () => {
+            $msgFormInput.value = '';
+            $msgFormInput.focus();
+            
+            console.log('msg Delivered!');
+        });
+    } 
+    $sendBtn.removeAttribute('disabled');
 });
 
 // sharing location
@@ -147,13 +129,9 @@ $locBtn.addEventListener('click', () => {
     });
 });
 
-socket.emit('join', { username, room }, (error) => {
-    if (error) {
-        alert(error);
-        location.href = '/';
-    }
-});
+// hide or show active user in mobile view
+$mobileActiveIcon.addEventListener('click', () => document.querySelector('.active__users').classList.toggle('mobile__user--active'));
 
-window.onbeforeunload = function(){
-    return 'Are you sure you want to leave?';
+window.onbeforeunload = function() {
+    return 'if you left this page, you have to join the room again!';
 };

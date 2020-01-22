@@ -42,13 +42,10 @@ io.on('connection', (socket) => {
     
     socket.on('sendMessage', (msgText, callback) => {
         const user = getUser(socket.id);
-        
-        if (msgText !== '') {
-            io.to(user.room).emit('message', generateMessage(user.username, msgText));
-            callback();     // for aknowledment 
-        }
 
-        callback();
+        socket.broadcast.to(user.room).emit('message', generateMessage(user.username, msgText, false));
+        socket.emit('message', generateMessage(user.username, msgText, true));
+        callback();     // for aknowledment 
     });
     
     socket.on('sendLocation', (coords, callback) => {
