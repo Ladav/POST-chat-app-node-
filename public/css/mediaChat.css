@@ -1,6 +1,6 @@
-:root {
+/* :root {
     --app-height: 100%;
- }
+ } */
 
  @media only screen and (max-width: 756px) {
     .chat__sidebar { -webkit-box-flex: 0; flex: 0 0 200px; }
@@ -22,13 +22,15 @@
 
 @media only screen and (max-width: 600px) {
     .chat__container { 
-        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-        height: calc(var(--vh, 1vh) * 100);
+        /* height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        /* height: calc(var(--vh, 1vh) * 100); */ 
         -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; 
     }
     
     /** sidebar*/
     .chat__sidebar { 
+        position: fixed;
+        width: 100%;
         top: 80px;
         -webkit-box-flex: 0; flex: 0 0 70px; 
     }
@@ -93,6 +95,7 @@
 
     /* chat window*/
     .chat__main { 
+        position: relative;
         width: 100%; 
         max-height: calc(100% - 80px);
     }
