@@ -22,8 +22,8 @@
 
 @media only screen and (max-width: 600px) {
     .chat__container { 
-        /* height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-        /* height: calc(var(--vh, 1vh) * 100); */ 
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
         -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; 
     }
     
@@ -32,11 +32,7 @@
         top: 80px;
         -webkit-box-flex: 0; flex: 0 0 70px; 
     }
-    .sidebar__container { 
-        position: fixed;
-        width: 100%;
-        height: 100%; 
-    }
+    .sidebar__container { height: 100%; }
     
     .room__name {
         font-size: 20px;
@@ -97,9 +93,8 @@
 
     /* chat window*/
     .chat__main { 
-        position: relative;
         width: 100%; 
-        max-height: calc(100% - 70px);
+        max-height: calc(100% - 80px);
     }
 
     .msg__container { padding: 10px 10px; }
