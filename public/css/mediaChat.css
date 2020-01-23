@@ -1,4 +1,8 @@
-@media only screen and (max-width: 756px) {
+:root {
+    --app-height: 100%;
+ }
+
+ @media only screen and (max-width: 756px) {
     .chat__sidebar { -webkit-box-flex: 0; flex: 0 0 200px; }
     .room__name { font-size: 22px; }
     .user { padding: 10px; }
@@ -17,10 +21,11 @@
 }
 
 @media only screen and (max-width: 600px) {
-    body { min-height: -webkit-fill-available; }
     .chat__container { 
-        min-height: -webkit-fill-available;
-        -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; }
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+        -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; 
+    }
     
     /** sidebar*/
     .chat__sidebar { 
@@ -97,7 +102,7 @@
 
     .msg, .msg__user {
         font-size: 18px;
-        padding: 0 8px 8px 10px;
+        padding: 0 10px 10px 10px;
     }
 
     .msg__form input {
