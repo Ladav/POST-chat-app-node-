@@ -207,6 +207,7 @@ button[disabled]{ background: #333; }
 
 /* chat window*/
 .chat__main {
+    height: auto;
     -webkit-box-flex: 1;
             flex: 1;
     width: calc(100% - 270px);
@@ -220,6 +221,7 @@ button[disabled]{ background: #333; }
 
 /* message Window*/
 .msg__container {
+    height: auto;
     -webkit-box-flex: 1;
             flex: 1;
     padding: 15px 25px;
