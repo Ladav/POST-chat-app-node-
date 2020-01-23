@@ -1,5 +1,5 @@
 @media only screen and (max-width: 756px) {
-    .chat__sidebar { flex: 0 0 200px; }
+    .chat__sidebar { -webkit-box-flex: 0; flex: 0 0 200px; }
     .room__name { font-size: 22px; }
     .user { padding: 10px; }
 
@@ -17,10 +17,10 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .chat__container { flex-direction: column; }
+    .chat__container { -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; }
     
     /** sidebar*/
-    .chat__sidebar { flex: 0 0 70px; }
+    .chat__sidebar { -webkit-box-flex: 0; flex: 0 0 70px; }
     .sidebar__container { height: 100%; }
     
     .room__name {
@@ -40,11 +40,14 @@
     }
     
     .active__users ul {
+        display: -webkit-box;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column;
     }
     /** user list <li>*/
-    .mobile__user--active { display: flex; }
+    .mobile__user--active { display: -webkit-box; display: flex; }
 
     .mobile__icon {
         display: inline-block;
