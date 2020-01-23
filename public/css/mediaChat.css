@@ -29,7 +29,6 @@
     
     /** sidebar*/
     .chat__sidebar { 
-        
         top: 80px;
         -webkit-box-flex: 0; flex: 0 0 70px; 
     }
@@ -100,7 +99,7 @@
     .chat__main { 
         position: relative;
         width: 100%; 
-        max-height: calc(100% - 80px);
+        max-height: calc(100% - 70px);
     }
 
     .msg__container { padding: 10px 10px; }
