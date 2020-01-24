@@ -1,9 +1,9 @@
 const socket = io();
 
 
-// const appHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
-// window.addEventListener('resize', appHeight)
-// appHeight();
+const appHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
+window.addEventListener('resize', appHeight)
+appHeight();
 
 
 /**all createTemplate function are stored in template.js*/
