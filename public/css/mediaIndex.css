@@ -1,0 +1,23 @@
+@media only screen and (max-width: 1024px) {
+    .join__title { font-size: 135px; }
+}
+
+@media only screen and (max-width: 848px) {
+    .join__window {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .join__title { align-items: flex-end; }
+    .join__box { flex: 2.5; }
+}
+
+@media only screen and (max-width: 512px) {
+    .join__title { font-size: 90px; }
+    .join__box--container { 
+        width: 310px;
+        height: 380px;
+        padding: 25px;
+     }
+
+}

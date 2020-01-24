@@ -11,14 +11,15 @@ body {
     font-size: 15px;
     color: #1d1e22;
     background-image: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(#1d1e22), to(#928DAB));
-    background-image: linear-gradient(to right, #000000, #1d1e22, #928DAB);
+    background-image: linear-gradient(to bottom ,#000, #1d1e22
+    ,
+    #333, #493240, #ff0099, #e62e75);
+    
     background-size: cover; 
     overflow: hidden;
 
     display: -webkit-box;
-
     display: -ms-flexbox;
-
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -42,6 +43,7 @@ body {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+.btn:focus { outline:none; }
 
 .btn:hover {
     background: #292929;
@@ -61,15 +63,13 @@ body {
 }
 
 /** join page*/
-.join__window, .jion__title, .join__box {
+.join__window, .join__title, .join__box {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
 
     display: -webkit-box;
-
     display: -ms-flexbox;
-
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -79,7 +79,7 @@ body {
             justify-content: center;
 }
 
-.jion__title {
+.join__title {
     font-size: 150px;
     color: #fff;
     -webkit-box-flex: 1;
@@ -97,7 +97,7 @@ body {
 .join__box--container {
     width: 350px;
     height: 400px;
-    padding: 30px 30px;
+    padding: 30px;
     border: 1px solid #ddd;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -106,9 +106,7 @@ body {
     -o-border-radius: 10px;
 
     display: -webkit-box;
-
     display: -ms-flexbox;
-
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -117,6 +115,7 @@ body {
 }
 
 .join__box--container h1 {
+    color: #fff;
     font-weight: 800;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 20%;
@@ -136,7 +135,6 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     justify-content: space-between;
-    padding: 14px 0px;
 }
 
 .join__form label {
@@ -146,5 +144,6 @@ body {
 
 .join__btn {
     font-weight: 300;
-    background-color: #1d1e22;
+    background-color: #e62e75;
+    margin-top: 15px;
 }
