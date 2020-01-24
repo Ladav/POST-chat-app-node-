@@ -132,11 +132,6 @@ $locBtn.addEventListener('click', () => {
 // hide or show active user in mobile view
 $mobileActiveIcon.addEventListener('click', () => document.querySelector('.active__users').classList.toggle('mobile__user--active'));
 
-// responsive mobile view
-const appHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
-window.addEventListener('resize', appHeight);
-appHeight();
-
 window.onbeforeunload = function() {
     return 'if you left this page, you have to join the room again!';
 };

@@ -37,6 +37,7 @@ body {
     -o-border-radius: 10px;
     outline: none;
 }
+.btn:focus { outline: none; }
 
 @media not all and (pointer: coarse) {
     .btn:hover { background: #000; }  

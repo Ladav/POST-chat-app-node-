@@ -13,11 +13,13 @@
 }
 
 @media only screen and (max-width: 512px) {
+    html, body { height: var(--app-height); }
     .join__title { font-size: 90px; }
     .join__box--container { 
         width: 310px;
         height: 380px;
         padding: 25px;
+        margin-bottom: 40px;
      }
 
 }

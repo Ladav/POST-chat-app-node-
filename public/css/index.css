@@ -43,7 +43,7 @@ body {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-.btn:focus { outline:none; }
+.btn:focus { outline: none; }
 
 .btn:hover {
     background: #292929;
