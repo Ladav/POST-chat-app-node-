@@ -21,8 +21,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+    body { height: 100%; }
     .chat__container { 
-         height: var(--app-height);
+         height: 100%;
         /* height: var(--app-height); */
         -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; 
     }
@@ -94,7 +95,7 @@
     /* chat window*/
     .chat__main { 
         width: 100%; 
-        max-height: calc(100% - 80px);
+        height: 100%;
     }
 
     .msg__container { padding: 10px 10px; }
