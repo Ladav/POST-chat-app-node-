@@ -1,7 +1,3 @@
-/* :root {
-    --app-height: 100%;
- } */
-
  @media only screen and (max-width: 756px) {
     .chat__sidebar { -webkit-box-flex: 0; flex: 0 0 200px; }
     .room__name { font-size: 22px; }
@@ -21,10 +17,10 @@
 }
 
 @media only screen and (max-width: 600px) {
-    body { height: var(--app-height); }
+    html, body { height: var(--app-height); }
+
     .chat__container { 
          height: 100%;
-        /* height: var(--app-height); */
         -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; 
     }
     
