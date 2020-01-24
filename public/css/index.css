@@ -82,6 +82,7 @@ body {
 .join__title {
     font-size: 150px;
     color: #fff;
+    z-index: 9999;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
