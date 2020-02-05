@@ -101,7 +101,7 @@
 
     .msg__container { 
         padding: 10px 10px;
-        height: 100%;
+        flex: 0 0 calc(100vh - 142px);
     }
     .msg__box, .msg__box__user { margin-bottom: 10px; }
 
