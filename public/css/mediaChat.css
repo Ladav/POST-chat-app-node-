@@ -100,7 +100,10 @@
         flex: 0;
     }
 
-    .msg__container { padding: 10px 10px; }
+    .msg__container { 
+        padding: 10px 10px;
+        height: 100%;
+    }
     .msg__box, .msg__box__user { margin-bottom: 10px; }
 
     .msg, .msg__user {
