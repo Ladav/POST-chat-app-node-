@@ -50,8 +50,11 @@ io.on('connection', (socket) => {
     
     socket.on('sendLocation', (coords, callback) => {
         const user = getUser(socket.id);
+        /*PENDING */
+        // socket.emit('message', generateLocationMessage(user.username, coords));
 
-        io.to(user.room).emit('locationMessage', generateLocationMessage(user.username, coords));
+        socket.emit('locationMessage', generateLocationMessage(user.username, coords, true));
+        socket.broadcast.to(user.room).emit('locationMessage', generateLocationMessage(user.username, coords));
         callback();
     });
 

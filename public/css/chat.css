@@ -269,11 +269,17 @@ button[disabled]{ background: #333; }
     border-bottom-right-radius: 0px;
 }
 
-.msg__location {
+.msg__location,
+.msg__location:link {
     display: inline-block;
+    font-size: 23px;
     width: 100%;
     text-align: center;
 }
+
+.msg__location:hover,
+.msg__location:active { color: #999; }
+
 
 .msg__name,
 .msg__time {
@@ -316,11 +322,21 @@ button[disabled]{ background: #333; }
 .msg__form input{
     -webkit-box-flex: 1;
             flex: 1;
+    font-size: 15px;
+    width: inherit;
     margin: 0 5px 0 10px;
+    padding: 15px 25px;
     color: #eee;
     background: #1F1F1F;
-    font-size: 15px;
-    padding: 15px 25px;
+    max-height: 100px;
+    font-weight: 400;
+    outline: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    z-index: 1;
     border: 0;
     outline: none;
 }

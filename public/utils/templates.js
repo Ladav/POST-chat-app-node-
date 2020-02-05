@@ -13,8 +13,8 @@ const createMsgTemplate = (msg) => {
 
 const createLocTemplate = (msg) => {
     return `
-    <div class="msg__box">
-        <div class="msg">
+    <div class=${msg.locMsg ? 'msg__box__user' : 'msg__box'}>
+        <div class=${msg.locMsg ? 'msg__user' : 'msg'}>
             <p>
                 <span class="msg__name">${msg.username}</span>
                 <span class="msg__time">${moment(msg.createdAt).format('h:mm A')}</span>

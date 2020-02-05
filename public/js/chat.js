@@ -17,6 +17,7 @@ const { username, room } = (() => {
     queryString = queryString.replace('room=', '');       // queryString = la+surname&ladav
     let [username, room] = queryString.split('&');        // ["la+surname", "ladav"]
     username = username.replace(/\+.*/, '');              // username = 'la' (in case user enter a display name like this-> "la dav nav cadsdf")
+    room = room.replace(/\+.*/, '');   
 
     if(username.charAt(10) !== '') {
         username = username.substr(0, 10) + '...';

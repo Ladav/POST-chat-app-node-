@@ -5,17 +5,17 @@
     padding: 0;
 }
 
+html {
+    
+    background-image: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(#1d1e22), to(#928DAB));
+    background-image: linear-gradient(to bottom , #000, #1d1e22, #333, #493240, #ff0099, #e62e75);
+}
+
 body {
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     color: #1d1e22;
-    background-image: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(#1d1e22), to(#928DAB));
-    background-image: linear-gradient(to bottom ,#000, #1d1e22
-    ,
-    #333, #493240, #ff0099, #e62e75);
-    
-    background-size: cover; 
     overflow: hidden;
 
     display: -webkit-box;
