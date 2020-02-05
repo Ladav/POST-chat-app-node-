@@ -97,7 +97,7 @@
         top: 80px;
         width: 100%;
         height: calc(100vh - 80px);
-        flex: 0;
+        flex: 1;
     }
 
     .msg__container { 
