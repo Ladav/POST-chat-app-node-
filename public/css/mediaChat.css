@@ -96,12 +96,14 @@
         position: relative;
         top: 80px;
         width: 100%;
-        flex: 0 0 calc(100vh - 80px);
+        -webkit-box-flex: 0;
+                flex: 0 0 calc(100vh - 80px);
     }
 
     .msg__container { 
         padding: 10px 10px;
-        flex: 0 0 calc(100vh - 142px);
+        -webkit-box-flex: 0;
+                flex: 0 0 calc(100vh - 140px);
     }
     .msg__box, .msg__box__user { margin-bottom: 10px; }
 
@@ -110,6 +112,12 @@
         padding: 0 10px 10px 10px;
     }
 
+    .msg__form {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 9px 10px;
+    }
     .msg__form input {
         padding: 12px 10px 12px 20px;
         margin: 0px;
