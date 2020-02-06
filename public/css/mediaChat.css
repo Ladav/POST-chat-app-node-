@@ -121,8 +121,7 @@
     }
 
     .msg__form {
-        display: block;
-        position: fixed;
+        /* position: fixed; */
         bottom: 0;
         height: 60px;
         background-color: #1F1F1F;
