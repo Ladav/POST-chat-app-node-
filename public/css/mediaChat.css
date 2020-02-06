@@ -121,6 +121,7 @@
     }
 
     .msg__form {
+        display: block;
         position: fixed;
         bottom: 0;
         height: 60px;
