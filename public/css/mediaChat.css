@@ -102,6 +102,7 @@
         position: relative;
         top: 80px;
         width: 100%;
+        height: calc(100vh - 80px);
         -webkit-box-flex: 0;
                 flex: 0 0 calc(100vh - 80px);
     }
