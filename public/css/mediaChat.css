@@ -108,7 +108,7 @@
 
     .msg__container { 
         padding: 10px 10px;
-        height: calc(100vh - 140px);;
+        height: calc(100vh - 140px);
         -webkit-box-flex: 0;
                 flex: 0 0 calc(100vh - 140px);
     }
