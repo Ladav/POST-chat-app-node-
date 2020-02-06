@@ -122,6 +122,7 @@
     .msg__form {
         position: fixed;
         bottom: 0;
+        background-color: #333333;
         width: 100%;
         padding: 9px 10px;
     }
