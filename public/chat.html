@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
@@ -11,12 +12,13 @@
     <link rel="stylesheet" href="./css/mediaChat.css">
     <title>post messenger</title>
 </head>
+
 <body>
     <div class="chat__container">
         <div class="mobile__icon">
             <img src="css/img/chat.png">
             <p>Active<span></span></p>
-            
+
         </div>
         <div class="chat__sidebar">
             <!-- <div class="sidebar__container">
@@ -39,25 +41,25 @@
                 </div>
             </div> -->
         </div>
-        
+
         <div class="chat__main">
             <div class="msg__container">
                 <!--<p>4:18 PM - example message!</p>-->
             </div>
-            <div class="composer__container">
-                <form class="msg__form">
-                    <input type="text" name="message" class="input" placeholder="message..." autocomplete="off">
-                    <button class="send__btn btn"><i class="ion-android-send"></i></button>
-                    <button class="location__btn btn"><i class="ion-ios-location"></i></button>
-                </form>
-            </div>
+            <form class="msg__form">
+                <input type="text" name="message" class="input" placeholder="message..." autocomplete="off">
+                <button class="send__btn btn"><i class="ion-android-send"></i></button>
+                <button class="location__btn btn"><i class="ion-ios-location"></i></button>
+            </form>
+
         </div>
-        
-    </div>    
+
+    </div>
 </body>
 <script src="./utils/responsive.js"></script>
 <script src="./utils/templates.js"></script>
 <script src="https://momentjs.com/downloads/moment.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/chat.js"></script>
+
 </html>
