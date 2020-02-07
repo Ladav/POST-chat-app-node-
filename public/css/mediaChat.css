@@ -97,17 +97,16 @@
         position: relative;
         top: 80px;
         width: 100%;
-        height: calc(100vh - 80px);
+        /* height: calc(100vh - 80px); */
         -webkit-box-flex: 0;
-                flex: 0 0 calc(100vh - 80px);
+                flex: 0 0 calc(var(--app-height) - 80px);
     }
 
     .msg__container { 
         padding: 10px 10px;
-        max-height: calc(100vh - 140px);
+        /* max-height: calc(var(--app-height) - 140px); */
         -webkit-box-flex: 0;
-                flex: 0 0 calc(100vh - 140px);
-        margin-bottom: -60px;
+                flex: 0 0 calc(var(--app-height) - 140px);
     }
     .msg__box, .msg__box__user { margin-bottom: 10px; }
 
