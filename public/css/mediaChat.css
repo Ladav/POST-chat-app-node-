@@ -107,6 +107,7 @@
         max-height: calc(100vh - 140px);
         -webkit-box-flex: 0;
                 flex: 0 0 calc(100vh - 140px);
+        margin-bottom: -60px;
     }
     .msg__box, .msg__box__user { margin-bottom: 10px; }
 
@@ -116,8 +117,8 @@
     }
 
     .msg__form {
-        /* position: fixed;
-        bottom: 0; */
+        position: fixed;
+        bottom: 0;
         height: 60px;
         background-color: #1F1F1F;
         width: 100%;
