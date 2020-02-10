@@ -29,9 +29,10 @@
     .chat__sidebar { 
         position: fixed;
         width: 100%;
-        z-index: 999;
+        height: 70px;
         -webkit-box-flex: 0; 
-        flex: 0 0 70px; 
+        flex: 0 0 70px;
+        z-index: 88;
     }
     .sidebar__container { height: 100%; }
     
@@ -66,6 +67,7 @@
         position: absolute;
         top: 13px;
         left: 15px;
+        z-index: 99;
     }
 
     .mobile__icon img { width: 35px; }
@@ -97,14 +99,12 @@
         position: relative;
         top: 80px;
         width: 100%;
-        /* height: calc(100vh - 80px); */
         -webkit-box-flex: 0;
                 flex: 0 0 calc(var(--app-height) - 80px);
     }
 
     .msg__container { 
         padding: 10px 10px;
-        /* max-height: calc(var(--app-height) - 140px); */
         -webkit-box-flex: 0;
                 flex: 0 0 calc(var(--app-height) - 140px);
     }
