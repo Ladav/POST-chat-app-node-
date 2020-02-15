@@ -32,7 +32,7 @@
         height: 70px;
         -webkit-box-flex: 0; 
         flex: 0 0 70px;
-        z-index: 88;
+        z-index: 92;
     }
     .sidebar__container { height: 100%; }
     
@@ -86,6 +86,7 @@
         width: 8px;
         height: 8px;
         margin-left: 3px;
+        padding-bottom: 5px;
         background: #e62e75;
         border-radius: 20px;
         -webkit-border-radius: 20px;
@@ -144,4 +145,45 @@
 
     /** scrollbar */
     .msg__container::-webkit-scrollbar { width: 4px; }
+
+    /** backdrop */
+    .backdrop {
+        position: absolute;
+        top: 70px;
+        height: 100%;
+        width: 100%;
+        z-index: 91;
+        background-color: #000000;
+        opacity: 0.5;
+        display: none;
+    }
+
+    /** Animations */
+    /** binking active icon */
+    @keyframes blinkAnimation {
+        0%   { opacity:1; }
+        50%  { opacity:0; }
+        100% { opacity:1; }
+      }
+      @-o-keyframes blinkAnimation{
+        0%   { opacity:1; }
+        50%  { opacity:0; }
+        100% { opacity:1; }
+      }
+      @-moz-keyframes blinkAnimation{
+        0%   { opacity:1; }
+        50%  { opacity:0; }
+        100% { opacity:1; }
+      }
+      @-webkit-keyframes blinkAnimation{
+        0%   { opacity:1; }
+        50%  { opacity:0; }
+        100% { opacity:1; }
+      }
+      .animate__blink {
+         -webkit-animation: blinkAnimation 1s infinite;
+         -moz-animation: blinkAnimation 1s infinite;
+         -o-animation: blinkAnimation 1s infinite;
+          animation: blinkAnimation 1s infinite;
+      }
 }

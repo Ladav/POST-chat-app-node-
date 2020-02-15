@@ -130,9 +130,35 @@ $locBtn.addEventListener('click', () => {
     });
 });
 
+
+//  on click listener for activeicon
 // hide or show active user in mobile view
-$mobileActiveIcon.addEventListener('click', () => document.querySelector('.active__users').classList.toggle('mobile__user--active'));
+$mobileActiveIcon.addEventListener('click', () => {
+    const activeUsers = document.querySelector('.active__users');
+
+    activeUsers.classList.toggle('mobile__user--active');
+    let isActive = false;
+    active__users.classList.map(_=> console.log(_));
+    for(let clas of activeUsers.classList) {
+        if(clas === 'mobile__user--active') isActive = true;
+    }
+    
+    if(isActive){
+        backdropListener.style.display = 'block';
+    }
+    else {
+        backdropListener.style.display = 'none';
+    }
+});
 
 window.onbeforeunload = function() {
     return 'if you left this page, you have to join the room again!';
 };
+
+
+// on click listener for backdrop
+const backdropListener = document.querySelector('.backdrop');
+backdropListener.addEventListener('click', () => {
+    backdropListener.style.display = 'none';
+    document.querySelector('.active__users').classList.toggle('mobile__user--active');
+})

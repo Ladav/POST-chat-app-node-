@@ -17,7 +17,7 @@
     <div class="chat__container">
         <div class="mobile__icon">
             <img src="css/img/chat.png">
-            <p>Active<span></span></p>
+            <p>Active<span class="animate__blink"></span></p>
 
         </div>
         <div class="chat__sidebar">
@@ -42,18 +42,17 @@
             </div> -->
         </div>
 
+        <div class="backdrop"></div>
         <div class="chat__main">
             <div class="msg__container">
                 <!--<p>4:18 PM - example message!</p>-->
             </div>
             <form class="msg__form">
-                <input type="text" name="message" class="input" placeholder="message..." autocomplete="off">
+                <input type="text" name="message" class="input" placeholder="message..."autocomplete="off">
                 <button class="send__btn btn"><i class="ion-android-send"></i></button>
                 <button class="location__btn btn"><i class="ion-ios-location"></i></button>
             </form>
-
         </div>
-
     </div>
 </body>
 <script src="./utils/responsive.js"></script>
@@ -61,5 +60,4 @@
 <script src="https://momentjs.com/downloads/moment.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/chat.js"></script>
-
 </html>
